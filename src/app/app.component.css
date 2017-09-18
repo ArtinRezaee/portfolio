@@ -1,0 +1,82 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+
+.row{margin-right:-15px;margin-left:-15px}
+
+.text-center { text-align: center;}
+
+#short-header.mi-slider-part{
+	height: 500px;
+	text-align: center;
+	color:#fff;
+}
+
+.mi-overlay-bg {
+	position: absolute;
+    top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(21,21,21,0.8),rgba(21,21,21,0.8)),url(../assets/rsz_bg2.jpg);
+}
+
+.mi-slider-caption {
+    font-family: 'Courier', sans-serif;
+    position: absolute;
+	left: 0;
+    top: 50%;
+	width: 100%;
+    transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+.mi-slider-caption h1{
+	font-size: 74px;
+	line-height: 80px;
+	font-weight: 600;
+	color: #fff;
+	padding-bottom: 30px;
+	margin: 0;
+}
+
+.mi-slider-caption .mi-caption-text {
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 30px;
+	font-weight: 300;
+	color: #fff;
+}
+
+span{
+    animation: blink 1s infinite;
+}
+
+@keyframes type{
+    from {width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0;  }
+}
+
+@keyframes blink {
+    to{opacity: .0;}
+}
+
+.typing
+{
+  display: inline-block;
+  width: 100%;
+  white-space:nowrap;
+  overflow:hidden;
+  -webkit-animation: type 3s steps(60, end) alternate;
+  animation: type 3s steps(60, end) alternate;
+}
+
+
