@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('artin-website App', () => {
+describe('artin-rez App', () => {
   let page: AppPage;
 
   beforeEach(() => {
