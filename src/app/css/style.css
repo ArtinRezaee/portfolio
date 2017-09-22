@@ -980,6 +980,10 @@ ul {
 	background: #0077b5;
 }
 
+.footer-section .social-links a.github {
+	background: #333;
+}
+
 .footer-section p {
 	font-size: 14px;
 	margin-bottom: 0;
