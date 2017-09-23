@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <script src="./js/jquery-2.1.4.min.js"></script>
+	<script src="./js/plugin.js"></script>
+	<script src="./js/main.js"></script> -->
 </head>
 <body>
 	<!-- Page Preloder -->
@@ -11,22 +14,25 @@
 	</div> -->
 
 	<!--====== Header Section Start ======-->
-	<header class="header-section">
-		<div class="responsive"><i class="fa fa-bars"></i></div>
+	<header class="header-section" id="nav">
+		<div class="logo">
+			<img src="../assets/img/logo.png" alt=""><!-- Logo -->
+		</div>
+		<div class="responsive" (click)="onResponsive($event)"><i class="fa fa-bars"></i></div>
 		<!-- Navigation -->
-		<ul class="menu-list">
-			<li><a href="#home">Home</a></li>
-			<li><a href="#about">About</a></li>
-			<li><a href="#resume">Resume</a></li>
-			<li><a href="#portfolio">Portfolio</a></li>
-			<li><a href="#contact">Contact</a></li>
+		<ul class="menu-list" id="menu" (click)="onMenuSelect()">
+			<li><a href="#home" scrollTo="home">Home</a></li>
+			<li><a href="#about" scrollTo="about">About</a></li>
+			<li><a href="#resume" scrollTo="resume">Resume</a></li>
+			<li><a href="#portfolio" scrollTo="portfolio">Portfolio</a></li>
+			<li><a href="#contact" scrollTo="contact">Contact</a></li>
 		</ul>
 	</header>
 	<!--====== Header Section End ======-->
 
 
 	<!-- ==== Intro Section Start ==== -->
-	<section class="intro-section fix" id="home">
+	<section class="intro-section fix" id="home" smoothScroll easing="easeInQuint">
 		<div class="intro-bg bg-cms"></div>
 		<div class="intro-inner">
 			<div class="intro-content">
@@ -38,7 +44,7 @@
 	<!-- ==== Intro Section End ==== -->
 
 	<!-- ==== Quote Section Start ==== -->
-	<section class="review-section fix" id="about">
+	<section class="review-section fix" id="about" smoothScroll easing="easeInQuint" >
 		<div class="container pt100 ">
 			<div class="col-md-offset-2 col-md-8">
 				<!-- Review item -->
@@ -61,7 +67,7 @@
 				</div>
 				<div class="col-md-6 about-text">
 					<h2 class="typing">A little about me <span>|</span></h2>
-					<p>I am <ins>Artin Rezaee.</ins> Software engineering student from Calgary, Alberta. Expericenced in web, mobile, and desktop application development. Some of my other areas of interest are Big data and data science, Network security, Distributed programming, and Mobile web apps. I have previous experience working and creating software for Calgary based startups. Aside from programming, I enjoy producing music, following news, and reading political analysis. I'm also passionate about traveling and learning about different cultures.</p>
+					<p>I am <ins>Artin Rezaee.</ins> Software engineering student from Calgary, Alberta; Expericenced in web, mobile, and desktop application development. Some of my other areas of interest are Big Data and Data Science, Network Security, Distributed Programming, and Mobile Web Apps. I have previous experience working and creating software for Calgary based startups. Aside from programming, I enjoy producing music, following news, reading political analyses, traveling, and learning about different cultures.</p>
 				</div>
 			</div>
 		</div>
@@ -105,7 +111,7 @@
 
 
 	<!-- ==== Resume Section Start ==== -->
-	<section class="resume-section fix" id="resume">
+	<section class="resume-section fix" id="resume" smoothScroll easing="easeInQuint">
 		<div class="container pt100 pb100">
 			<div class="stitle mb100">
 				<h2>My Experience</h2>
@@ -159,7 +165,7 @@
 
 
 	<!-- ==== Portfolio Section Start ==== -->
-	<section class="portfolio-section fix" id="portfolio">
+	<section class="portfolio-section fix" id="portfolio" smoothScroll easing="easeInQuint">
 		<div class="container-fluid pt100">
 			<div class="stitle mb70">
 				<h2>My Latest Projects</h2>
@@ -266,7 +272,7 @@
 
 
 	<!-- ==== Contact Section Start ==== -->
-	<section class="contact-section fix" id="contact">
+	<section class="contact-section fix" id="contact" smoothScroll easing="easeInQuint">
 		<div class="container pt100 pb100">
 			<div class="stitle mb70">
 				<h2 class="typing" >I'd love to chat <span>|</span></h2>
@@ -275,16 +281,12 @@
 				<div class="col-md-8 col-md-offset-2">
 					<div class="row">
 						<!-- Contact Info -->
-						
-						<div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.2s">
+						<div class="col-md-6 col-sm-6 col-centered contact-info wow fadeInUp" data-wow-delay="0.2s">
 							<i class="fa fa-phone"></i>
 							<p>+1 (403) 918 2606
 						</div>
 						<!-- Contact Info -->
-						<div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.4s">
-						</div>
-						<!-- Contact Info -->
-						<div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.6s">
+						<div class="col-md-6 col-sm-6 contact-info wow fadeInUp" data-wow-delay="0.6s">
 							<i class="fa fa-envelope"></i>
 							<p>artin.anzabee@gmail.com</p>
 						</div>
@@ -328,9 +330,6 @@
 	<!-- ==== Footer Section End ==== -->
 
 
-	<!--====== Javascripts & Jquery ======-->	
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/plugin.js"></script>
-	<script src="js/main.js"></script>
+
 </body>
 </html>

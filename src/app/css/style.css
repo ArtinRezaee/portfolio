@@ -1034,6 +1034,7 @@ ul {
 		float: none;
 		clear: both;
 		border-top: 1px solid #222;
+		margin-top: 60px;
 	}
 	.header-section .menu-list li {
 		display: inline;

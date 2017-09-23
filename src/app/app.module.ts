@@ -1,14 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
+import { SmoothScrollToDirective, SmoothScrollDirective } from "ng2-Smooth-Scroll";
+import { StickyNavModule } from 'ng2-sticky-nav';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SmoothScrollToDirective,
+    SmoothScrollDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StickyNavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

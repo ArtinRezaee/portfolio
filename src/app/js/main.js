@@ -58,7 +58,7 @@ $(window).on('load', function() {
 		$('.menu-list').slideToggle(400);
 		$('.header-section').toggleClass('bgc');
 		event.preventDefault();
-	});
+	})
 
 	$('.menu-list li a').on('click', function(event) {
 		if ($(window).width() < 768) {
