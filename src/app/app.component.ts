@@ -1,5 +1,5 @@
 import { emailValidator } from './email.validator';
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from "@angular/platform-browser";
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -12,8 +12,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
   './css/owl.carousel.css', './css/style.css', './css/skins/default.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'app';
+  loaded: boolean = false;
   navToggle: boolean = false;
   responsive: boolean = false;
   form: FormGroup;
@@ -25,6 +26,10 @@ export class AppComponent {
       email: ['', Validators.compose([Validators.required, emailValidator.mustHaveAt])],
       message: ['', Validators.required]
     })
+  }
+
+  ngOnInit(){
+    this.loaded = true;
   }
   
 
