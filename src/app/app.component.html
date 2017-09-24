@@ -20,7 +20,7 @@
 		</div>
 		<div class="responsive" (click)="onResponsive($event)"><i class="fa fa-bars"></i></div>
 		<!-- Navigation -->
-		<ul class="menu-list" id="menu" (click)="onMenuSelect()">
+		<ul class="menu-list" id="menu" (click)="onMenuSelect($event)">
 			<li><a href="#home" scrollTo="home">Home</a></li>
 			<li><a href="#about" scrollTo="about">About</a></li>
 			<li><a href="#resume" scrollTo="resume">Resume</a></li>
@@ -101,7 +101,7 @@
 					<div class="service-item">
 						<i class="fa fa-codepen"></i>
 						<h4>Application Development</h4>
-						<p style="color:black">Utalizing languages such as Java, python, and C/C++, I create applications intended and optimized to run on desktop operatin systems</p>
+						<p style="color:black">Utalizing languages such as Java, python, and C/C++, I create applications intended and optimized to run on desktop operating systems</p>
 					</div>
 				</div>
 			</div>
@@ -292,7 +292,7 @@
 						</div>
 					</div>
 					<!-- Contact Form -->
-					<form action="mail.php" class="send-form-style" id="contact-form" method="POST" >
+					<!-- <form action="mail.php" class="send-form-style" id="contact-form" method="POST" >
 						<div class="row">
 							<div class="col-sm-6">
 								<input type="text" name="name" id="name" required placeholder="Your Name*">
@@ -304,8 +304,30 @@
 								<textarea id="massage" name="massage" required placeholder="Your Massage*"></textarea>
 							</div>
 							<div class="text-center">
-								<button type="submit" class="site-btn" data-wow-delay="0.2s" id="send-form">Send Massege</button>
+								<button type="submit" class="site-btn" data-wow-delay="0.2s" id="send-form" (click)="onSubmit()">Send Massege</button>
 							</div>
+						</div>
+					</form> -->
+					<form [formGroup]="form" (ngSubmit)="onSubmit()" class="send-form-style" id="contact-form" method="POST">
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="text" formControlName="name" id="name" required placeholder="Your Name*" required="required">
+								<i *ngIf="name.touched && name.hasError('required')" style="color:palevioletred">Please enter your name</i>
+							</div>
+							<div class="col-sm-6">
+								<input type="email" formControlName="email" type="email" id="email" required placeholder="Your Email*" required="required">
+								<i *ngIf="email.touched && email.hasError('required')" style="color:palevioletred">Please enter your email</i>
+								<i *ngIf="email.touched && email.hasError('mustHaveAt')" style="color:palevioletred">Incorrect Email format</i>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<textarea id="message" type="text" formControlName="message" required placeholder="Your Message*" required="required"></textarea>
+								<i *ngIf="message.touched && message.hasError('required')" style="color:palevioletred">Please enter your message</i>
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="submit" class="site-btn" data-wow-delay="0.2s" id="send-form">Send Massege</button>
 						</div>
 					</form>
 				</div>
