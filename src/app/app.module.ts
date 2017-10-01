@@ -7,14 +7,21 @@ import { NgModule} from '@angular/core';
 import { SmoothScrollToDirective, SmoothScrollDirective } from "ng2-Smooth-Scroll";
 import { StickyNavModule } from 'ng2-sticky-nav';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SmoothScrollToDirective,
     SmoothScrollDirective,
+    DialogComponent,
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -22,10 +29,11 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [emailValidator],
   bootstrap: [AppComponent],
-  
 })
 export class AppModule { }

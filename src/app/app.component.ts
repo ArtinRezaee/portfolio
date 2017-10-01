@@ -1,3 +1,6 @@
+import { PORTFOLIO } from './portfolio.Interface';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog } from '@angular/material';
 import { emailValidator } from './email.validator';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from "@angular/platform-browser";
@@ -20,7 +23,7 @@ export class AppComponent implements OnInit{
   form: FormGroup;
   
   constructor(@Inject(DOCUMENT) private document: Document,
-  private fb: FormBuilder, private fDb: AngularFireDatabase) { 
+  private fb: FormBuilder, private fDb: AngularFireDatabase, private dialog: MatDialog) { 
     this.form = fb.group({
       name: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, emailValidator.mustHaveAt])],
@@ -115,6 +118,14 @@ export class AppComponent implements OnInit{
      })
 
    }
+  }
+
+  onWorkClick(index: number){
+    let dialogRef = this.dialog.open(DialogComponent, {
+      data: PORTFOLIO[index],
+      height: '400px',
+      width: '600px',
+    });
   }
 
   get name(){
