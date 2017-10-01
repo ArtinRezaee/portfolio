@@ -6,9 +6,9 @@
       <div id="workID-1" class="work-popup">
         <img src="{{data.img}}" alt="">
         <div class="work-popup-content">
-          <h3 mat-dialog-title style="color:black">{{data.title}}</h3>
-          <p mat-dialog-content style="color:black">{{data.description}}</p>
-        <div mat-dialog-actions>
+          <h3 style="color:black">{{data.title}}</h3>
+          <p style="color:black">{{data.description}}</p>
+        <div>
             <button title="Close (Esc)" type="button" class="mfp-close" (click)="closeComponent()">×</button>
         </div>
         <div style="text-align:center" *ngIf='show'>
